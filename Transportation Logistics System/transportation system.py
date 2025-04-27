@@ -12,13 +12,14 @@ deliveries = []    # Stores confirmed delivery records including timestamp
 
 # Function to add a new vehicle to the fleet
 def fleet_add():
+    global fleets
     print("=== Add a New Vehicle ===")
     
     # Prompt for a 4-digit vehicle ID
     vehicle_id = input("Enter a 4-digit vehicle ID: ")
     
     # Validate the vehicle ID length
-    if len(vehicle_id) != 4:
+    if len(vehicle_id)!= 4:
         print("Error: Vehicle ID must be 4 digits.")
         input("Press Enter to continue...")
         return
@@ -46,6 +47,7 @@ def fleet_add():
 
 # Function to update vehicle information
 def fleet_update():
+    global fleet
     print("=== Update Vehicle Info ===")
     vehicle_id = input("Enter the vehicle ID to update: ")
 
@@ -148,7 +150,7 @@ def shipment_create():
         return
 
     # Step 4: Collect other shipment details from the user
-    origin = input("Enter Origin: ")
+    origin = input("Enter Origin Location: ")
     destination = input("Enter Destination: ")
     
     # Step 5: Validate the shipment weight
